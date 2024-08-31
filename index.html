@@ -8,6 +8,8 @@
   </head>
   <body>
     <div id="navbar-container"></div>
+    <div id="header-container"></div>
+    <div id="logobar-container"></div>
 
     <script src="script.js"></script>
     <script>
@@ -21,7 +23,31 @@
           .catch((error) => console.error("Error loading navbar:", error));
       }
 
-      document.addEventListener("DOMContentLoaded", loadNavbar);
+      // Function to load the header HTML
+      function loadHeader() {
+        fetch("pages/headerSection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading header:", error));
+      }
+
+      // Function to load the logo bar HTML
+      function loadLogoBar() {
+        fetch("pages/logoBar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("logobar-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading logo bar:", error));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loadNavbar();
+        loadHeader();
+        loadLogoBar();
+      });
     </script>
   </body>
 </html>
