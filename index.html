@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+      // Function to load the navbar HTML
+      function loadNavbar() {
+        fetch("pages/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading navbar:", error));
+      }
+
+      document.addEventListener("DOMContentLoaded", loadNavbar);
+    </script>
+  </body>
+</html>
