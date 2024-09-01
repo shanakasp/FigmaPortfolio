@@ -7,21 +7,25 @@
       href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contactSection.css" />
+    <!-- Add this line -->
   </head>
   <body>
     <div id="navbar-container"></div>
     <div id="header-container"></div>
     <div id="logobar-container"></div>
     <div id="skills-section-container"></div>
+    <div id="gallery-section-container"></div>
+    <div id="testimonial-section-container"></div>
+    <div id="contact-section-container"></div>
+    <!-- Added container for Contact Section -->
 
     <script src="script.js"></script>
     <script>
-      // Function to load the navbar HTML
       function loadNavbar() {
         fetch("pages/navbar.html")
           .then((response) => response.text())
@@ -31,7 +35,6 @@
           .catch((error) => console.error("Error loading navbar:", error));
       }
 
-      // Function to load the header HTML
       function loadHeader() {
         fetch("pages/headerSection.html")
           .then((response) => response.text())
@@ -41,7 +44,6 @@
           .catch((error) => console.error("Error loading header:", error));
       }
 
-      // Function to load the logo bar HTML
       function loadLogoBar() {
         fetch("pages/logoBar.html")
           .then((response) => response.text())
@@ -63,11 +65,50 @@
           );
       }
 
+      function loadGallerySection() {
+        fetch("pages/gallerySection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("gallery-section-container").innerHTML =
+              data;
+          })
+          .catch((error) =>
+            console.error("Error loading Gallery Section:", error)
+          );
+      }
+
+      function loadTestimonialSection() {
+        fetch("pages/testimonial.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("testimonial-section-container").innerHTML =
+              data;
+          })
+          .catch((error) =>
+            console.error("Error loading Testimonial Section:", error)
+          );
+      }
+
+      function loadContactSection() {
+        fetch("pages/contactSection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("contact-section-container").innerHTML =
+              data;
+          })
+          .catch((error) =>
+            console.error("Error loading Contact Section:", error)
+          );
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         loadNavbar();
         loadHeader();
         loadLogoBar();
         loadSkillsSection();
+        loadGallerySection();
+        loadTestimonialSection();
+        loadContactSection();
       });
     </script>
   </body>

@@ -1,16 +1,13 @@
-/* Reset default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Epilogue", sans-serif;
 }
 
-/* Navbar container */
 .Navigation {
   width: 100%;
   height: 78px;
@@ -20,42 +17,68 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Logo styling */
 .Logo {
   color: #2d2d2d;
   font-size: 20px;
   font-family: Epilogue, sans-serif;
   font-weight: 600;
   line-height: 30px;
+  transition: color 0.3s ease;
 }
 
-/* Menu items container */
 .MenuItems {
   display: flex;
+
   gap: 24px;
 }
 
-/* Menu item styling */
+.Logo:hover {
+  color: #007bff;
+}
+
 .MenuItem {
   color: #2d2d2d;
   font-size: 17px;
   font-family: Epilogue, sans-serif;
   font-weight: 400;
+  cursor: pointer;
   line-height: 27px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Toggle button styling */
+.MenuItem::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.MenuItem:hover::after {
+  width: 100%;
+}
+
 .ToggleButton {
   display: none;
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* Responsive styles */
+.ToggleButton:hover {
+  color: #007bff;
+}
+
 @media (max-width: 768px) {
   .MenuItems {
     display: none;
@@ -68,29 +91,31 @@ body {
     background: white;
     padding: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-20px);
+    opacity: 0;
   }
 
   .MenuItems.show {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .ToggleButton {
     display: block;
   }
 }
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&display=swap");
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Epilogue", sans-serif;
+@media (max-width: 768px) {
+  .MenuItem {
+    font-size: 20px;
+  }
 }
 
-/* Header Section Container */
 .HeaderSection {
   width: 100%;
   max-width: 100%;
-
   padding: 42px 64px;
   background: white;
   display: flex;
@@ -101,7 +126,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Header Content */
 .HeaderContent {
   flex: 1;
   flex-direction: column;
@@ -112,7 +136,6 @@ body {
   min-width: 300px;
 }
 
-/* Title and Subtitle */
 .TitleSubtitle {
   width: 100%;
   max-width: 600px;
@@ -123,7 +146,6 @@ body {
   display: flex;
 }
 
-/* Branding | Image making */
 .BrandingImageMaking {
   color: #2d2d2d;
   font-size: 20px;
@@ -131,7 +153,6 @@ body {
   line-height: 30px;
 }
 
-/* Visual Designer Title */
 .VisualDesigner {
   color: #2d2d2d;
   font-size: 4vw;
@@ -139,7 +160,6 @@ body {
   word-wrap: break-word;
 }
 
-/* Template Info */
 .ThisIsATemplateFigmaFileTurnedIntoCodeUsingAnimaLearnMoreAtAnimaappCom {
   color: #2d2d2d;
   font-size: 17px;
@@ -147,7 +167,6 @@ body {
   line-height: 27px;
 }
 
-/* Contact Button */
 .Button {
   padding: 14px 54px;
   background: #2d2d2d;
@@ -166,13 +185,13 @@ body {
 }
 
 .Headerimage1 {
-  width: 480px; /* Fixed width */
-  height: 360px; /* Fixed height */
-  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
-  align-self: flex-end; /* Keeps the image aligned to the bottom right */
+  width: 480px;
+  height: 360px;
+  margin-top: 40px;
+  object-fit: cover;
+  align-self: flex-end;
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
   .HeaderSection {
     padding: 24px;
@@ -191,7 +210,6 @@ body {
 
   .Headerimage1 {
     width: 100%;
-    max-height: 300px;
   }
 }
 
@@ -240,6 +258,7 @@ body {
     max-height: 200px;
   }
 }
+
 .logo-bar {
   width: 100%;
   height: auto;
@@ -248,12 +267,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+  flex-wrap: wrap;
 }
 
 .logo {
-  max-width: 20%; /* Adjust the size as a percentage of the container width */
+  max-width: 20%;
   height: auto;
+  margin-right: 30px;
 }
 
 @media (max-width: 1200px) {
@@ -270,15 +290,16 @@ body {
 
 @media (max-width: 768px) {
   .logo {
-    max-width: 20%;
+    max-width: 12%;
   }
 }
 
 @media (max-width: 576px) {
   .logo {
-    max-width: 15%;
+    max-width: 8%;
   }
 }
+
 .SkillsSection {
   width: 100%;
   padding: 42px 24px;
@@ -319,7 +340,7 @@ body {
 .TitleDescription {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 12px;
   text-align: center;
@@ -328,7 +349,11 @@ body {
 .Title {
   font-size: 27px;
   font-weight: 600;
+  margin-left: 30%;
+  justify-content: center;
+  align-items: center;
   line-height: 42px;
+  text-align: center;
   color: #2d2d2d;
 }
 
@@ -339,7 +364,6 @@ body {
   color: #2d2d2d;
 }
 
-/* Medium screens (Tablets) */
 @media (max-width: 992px) {
   .SkillsCard {
     flex: 1 1 45%;
@@ -359,7 +383,6 @@ body {
   }
 }
 
-/* Small screens (Mobile) */
 @media (max-width: 576px) {
   .SkillsCard {
     flex: 1 1 100%;
@@ -377,4 +400,459 @@ body {
   .Description {
     font-size: 14px;
   }
+}
+.GallerySection {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 42px 24px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 42px;
+}
+
+.LatestWork {
+  text-align: center;
+  color: #2d2d2d;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 42px;
+  word-wrap: break-word;
+}
+
+.CardsSection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.GalleryCard {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.GalleryCard img.Image {
+  width: 100%;
+  height: auto;
+  max-height: 330px;
+  object-fit: cover;
+}
+
+.TitleDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ProjectTitle {
+  color: #2d2d2d;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+.UiArtDirection {
+  color: #2d2d2d;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27px;
+  word-wrap: break-word;
+}
+
+/* Medium screens (Tablets) */
+@media (max-width: 992px) {
+  .GalleryCard {
+    flex: 1 1 45%;
+  }
+
+  .LatestWork {
+    font-size: 28px;
+  }
+
+  .ProjectTitle {
+    font-size: 18px;
+  }
+
+  .UiArtDirection {
+    font-size: 15px;
+  }
+}
+
+/* Small screens (Mobile) */
+@media (max-width: 576px) {
+  .GalleryCard {
+    flex: 1 1 100%;
+  }
+
+  .LatestWork {
+    font-size: 24px;
+  }
+
+  .ProjectTitle {
+    font-size: 16px;
+  }
+
+  .UiArtDirection {
+    font-size: 14px;
+  }
+}
+
+/* General styles for the testimonial section */
+.testimonial-section {
+  width: 100%;
+  padding: 42px 24px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+}
+
+/* Header style */
+.testimonial-header {
+  text-align: center;
+  color: #2d2d2d;
+  font-size: clamp(24px, 5vw, 32px); /* Dynamic font size */
+  font-family: Epilogue, sans-serif;
+  font-weight: 600;
+  line-height: clamp(32px, 6vw, 42px); /* Dynamic line-height */
+}
+
+/* Container for testimonial cards */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px; /* Adjust this value as needed */
+}
+
+/* Style for individual testimonial cards */
+.testimonial-card {
+  padding: 42px;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+/* Testimonial text style */
+.testimonial-text {
+  color: #2d2d2d;
+  font-size: clamp(16px, 4vw, 20px); /* Dynamic font size */
+  font-family: Epilogue, sans-serif;
+  font-weight: 600;
+  line-height: clamp(24px, 5vw, 30px); /* Dynamic line-height */
+}
+
+/* Container for client image and info */
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Client image style */
+.client-image {
+  width: 50px;
+  height: 50px;
+  margin-top: -2.5%;
+  border-radius: 50%;
+}
+
+/* Container for client details and stars */
+.client-details {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* Stars container */
+.stars {
+  display: flex;
+  gap: 6px;
+}
+
+/* Individual star style */
+.star {
+  width: 20px;
+  height: 20px;
+  background: url("/images/Star1.png") no-repeat center center;
+  background-size: contain;
+}
+
+.contact-section {
+  width: 100%;
+ 
+  height: auto; /* Adjusted for responsive height */
+  padding: 42px 24px 86px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box; /* Added to handle padding and width */
+}
+
+.lets-work-together {
+  color: #2d2d2d;
+  font-size: 32px;
+  font-family: Epilogue, sans-serif;
+  font-weight: 600;
+  line-height: 42px;
+  word-wrap: break-word;
+}
+
+.contact-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 142px;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  flex: 1;
+}
+
+.title-description {
+  color: #2d2d2d;
+  font-size: 17px;
+  font-family: Epilogue, sans-serif;
+  font-weight: 400;
+  line-height: 27px;
+  word-wrap: break-word;
+}
+
+.social-links {
+  display: flex;
+  gap: 24px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.discord {
+  background-image: url("/images/discord.png"); /* Update the path to your icon */
+}
+
+.facebook {
+  background-image: url("/images/facebook.png"); /* Update the path to your icon */
+}
+
+.dribbble {
+  background-image: url("/images/dribbble.png"); /* Update the path to your icon */
+}
+
+.instagram {
+  background-image: url("/images/instagram.png"); /* Corrected the path */
+}
+
+.behance {
+  background-image: url("/images/behance.png"); /* Update the path to your icon */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  align-items: flex-end; /* Align form to the right */
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.input-field {
+  padding: 16px;
+  background: #f3f3f3;
+  color: #2d2d2d;
+  font-size: 17px;
+  font-family: Epilogue, sans-serif;
+  font-weight: 600;
+  line-height: 27px;
+  word-wrap: break-word;
+  border: 1px solid #ddd; /* Added border */
+  border-radius: 4px; /* Rounded corners */
+  width: 100%; /* Full width of container */
+}
+
+.submit-button {
+  padding: 14px 44px;
+  background: #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+   /* Added for button styling */:;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
+}
+
+.contact {
+  color: white;
+  font-size: 16px;
+  font-family: Epilogue, sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-section-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
+
+/*hover effects*/
+
+.Button:hover {
+  background: #444; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Slightly enlarge the icon */
+  opacity: 0.8; /* Slightly reduce opacity */
+}
+
+.SkillsCard {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.SkillsCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(232, 232, 232, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: transform 0.3s ease;
+  transform: rotate(-30deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.SkillsCard:hover {
+  transform: translateY(-10px);
+}
+
+.SkillsCard:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) rotate(-30deg);
+}
+.GalleryCard {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.GalleryCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(232, 232, 232, 0.7) 0%, rgba(173, 216, 230, 0) 100%);
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(-30deg);
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+}
+
+.GalleryCard:hover {
+  transform: scale(1.05);
+}
+
+.GalleryCard:hover::before {
+  animation: shine 1s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(-30deg);
+  }
+  50% {
+    transform: translateX(100%) rotate(-30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -100%;
+  width: 200%;
+  height: 120%;
+  background: linear-gradient(135deg, rgba(211, 211, 211, 0.5) 0%, rgba(211, 211, 211, 0) 50%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-card:hover::before {
+  transform: translateX(100%);
+  opacity: 1;
 }
