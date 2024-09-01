@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
@@ -10,6 +17,7 @@
     <div id="navbar-container"></div>
     <div id="header-container"></div>
     <div id="logobar-container"></div>
+    <div id="skills-section-container"></div>
 
     <script src="script.js"></script>
     <script>
@@ -43,10 +51,23 @@
           .catch((error) => console.error("Error loading logo bar:", error));
       }
 
+      function loadSkillsSection() {
+        fetch("pages/skillsSection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("skills-section-container").innerHTML =
+              data;
+          })
+          .catch((error) =>
+            console.error("Error loading Skills Section:", error)
+          );
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         loadNavbar();
         loadHeader();
         loadLogoBar();
+        loadSkillsSection();
       });
     </script>
   </body>

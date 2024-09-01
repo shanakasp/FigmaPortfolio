@@ -279,3 +279,102 @@ body {
     max-width: 15%;
   }
 }
+.SkillsSection {
+  width: 100%;
+  padding: 42px 24px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Epilogue", sans-serif;
+}
+
+.CardsSection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.SkillsCard {
+  flex: 1 1 30%;
+  padding: 42px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  box-sizing: border-box;
+}
+
+.SkillsCardIcon {
+  width: 124px;
+  height: 124px;
+  position: relative;
+}
+
+.TitleDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.Title {
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #2d2d2d;
+}
+
+.Description {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #2d2d2d;
+}
+
+/* Medium screens (Tablets) */
+@media (max-width: 992px) {
+  .SkillsCard {
+    flex: 1 1 45%;
+  }
+
+  .SkillsCardIcon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .Title {
+    font-size: 24px;
+  }
+
+  .Description {
+    font-size: 15px;
+  }
+}
+
+/* Small screens (Mobile) */
+@media (max-width: 576px) {
+  .SkillsCard {
+    flex: 1 1 100%;
+  }
+
+  .SkillsCardIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .Title {
+    font-size: 20px;
+  }
+
+  .Description {
+    font-size: 14px;
+  }
+}
