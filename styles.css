@@ -403,7 +403,7 @@ body {
 }
 .GallerySection {
   width: 100%;
-  max-width: 1280px;
+
   margin: 0 auto;
   padding: 42px 24px;
   background: white;
@@ -442,8 +442,7 @@ body {
 
 .GalleryCard img.Image {
   width: 100%;
-  height: auto;
-  max-height: 330px;
+
   object-fit: cover;
 }
 
@@ -534,10 +533,22 @@ body {
 /* Container for testimonial cards */
 .cards-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  width: 100%;
-  max-width: 1200px; /* Adjust this value as needed */
+  grid-template-columns: repeat(3, 1fr); /* Display 3 cards per row */
+  gap: 24px; /* Gap between the cards */
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Ensure padding and border are included in the total width and height */
+}
+
+@media (max-width: 768px) {
+  .cards-section {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-section {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
 }
 
 /* Style for individual testimonial cards */
